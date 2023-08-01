@@ -29,9 +29,7 @@ registerRoute(({ request }) => request.mode === "navigate", pageCache);
 // TODO: Implement asset caching
 registerRoute(
   //* Add the route pattern for assets.
-  ({ url }) =>
-    url.pathname.endsWith(".css") ||
-    url.pathname.endsWith(".js"),
+  ({ url }) => url.pathname.endsWith(".css") || url.pathname.endsWith(".js"),
 
   //* Use the CacheFirst strategy to cache the assets
   new CacheFirst({
