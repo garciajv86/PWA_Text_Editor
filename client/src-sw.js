@@ -7,6 +7,11 @@ const { precacheAndRoute } = require("workbox-precaching/precacheAndRoute");
 
 precacheAndRoute(self.__WB_MANIFEST);
 
+//? Add offline fallback response for specific routes
+offlineFallback({
+  request: new Request("/index.html"), //* custom offline page URL
+});
+
 const pageCache = new CacheFirst({
   cacheName: "page-cache",
   plugins: [
