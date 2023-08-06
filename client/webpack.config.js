@@ -24,6 +24,7 @@ module.exports = () => {
       //* Added and configured HtmlWebpackPlugin
       new HtmlWebpackPlugin({
         template: "./index.html",
+        favicon: './favicon.ico',
         title: "JATE",
       }),
       //* Added and configured InjectManifest for Workbox
@@ -44,7 +45,7 @@ module.exports = () => {
         publicPath: "./",
         icons: [
           {
-            src: path.resolve("src/images/logo.png"),
+            src: path.resolve("./src/images/logo.png"),
             sizes: [96, 128, 192, 256, 384, 512],
             destination: path.join("assets", "icons"),
           },
